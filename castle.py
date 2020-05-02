@@ -125,9 +125,14 @@ def build_castle(hight_castle, hight_thin, hight_wide, sh_win, nr_win, nw_win):
     # добавляем зубцы
     tower_wide = tower_wid + color(Red)(
         translate((1100, 650, hight_wide - 900))(high_ring + d))
+    # Красота
+    flig = cylinder(r=5, h=1200) + up(1200)(cube([100, 5, 60], center=False)) +
+    translate((10, 0, 1225))(color(Green)(rotate(90, [1, 0, 0])(text(
+        "The Cat's Empire", font="Liberation Sans:style=Bold Italic"))))
 # Ура, наш замок готов!
     castle = union()(basis, simple_tower, right(1000)(
-        simple_tower), forward(600)(simple_tower), tower_thin,  tower_wide)
+        simple_tower), forward(600)(simple_tower),
+                     tower_thin,  tower_wide, flig)
 
     return castle
 
