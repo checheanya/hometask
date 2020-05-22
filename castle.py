@@ -136,6 +136,7 @@ def build_castle(hight_castle, hight_thin, hight_wide, sh_win, nr_win, nw_win):
 
     return castle
 
+
 if __name__ == '__main__':
     out_dir = sys.argv[1] if len(sys.argv) > 1 else None
 
